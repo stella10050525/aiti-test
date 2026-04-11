@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AITI v5.0 - AI 人格测试</title>
+    <link rel="stylesheet" href="css/style.css">
+    <meta name="description" content="测测你的 AI 人格是什么？是温暖的 ChatGPT，还是高冷的 DeepSeek？12 题找到最适合你的 AI 伙伴！">
+    <meta property="og:title" content="AITI v5.0 - AI 人格测试">
+    <meta property="og:description" content="测测你的 AI 人格是什么？">
+    <meta property="og:image" content="images/share-card.png">
+</head>
+<body>
+    <!-- 首页 -->
+    <div id="home-page" class="page active">
+        <div class="container">
+            <!-- 免责声明 -->
+            <div class="disclaimer">
+                <div class="disclaimer-line1">🚨测试和解读是综合和多个 AI 模型探讨生成的，网页是技术小白用有道龙虾 LobsterAI 搓出来的。</div>
+                <div class="disclaimer-line2">🙌测试结果仅供参考玩梗，不构成专业或商业推荐。by <a href="https://www.xiaohongshu.com/user/profile/68452893000000001b0226a4?xsec_token=ABCTBkpwTho2O__wvgbgTUPjv949DlO70G4XG7IxT0YCw%3D&xsec_source=pc_search" target="_blank" rel="noopener">@AI 啥啥🍠</a></div>
+            </div>
+            
+            <div class="hero">
+                <img src="images/logo.png" alt="AITI Logo" class="hero-logo" onerror="this.style.display='none'">
+                <div class="hero-english">AITI</div>
+                <h1>AI 人格测试 v5.0</h1>
+                <p class="subtitle">发现最适合你的 AI 伙伴</p>
+                <p class="hero-fullname">Artificial Intelligence Type Indicator</p>
+            </div>
+            
+            <div class="intro-cards">
+                <div class="intro-card">
+                    <div class="card-icon">📚</div>
+                    <h3>12 道精选题</h3>
+                    <p>参考 MBTI 测评逻辑，AI 共创，约 2-3 分钟完成</p>
+                </div>
+                <div class="intro-card">
+                    <div class="card-icon">🤖</div>
+                    <h3>8 个主流模型</h3>
+                    <p>GPT、Claude、DeepSeek、Kimi、豆包、Qwen、智谱、Gemini</p>
+                </div>
+                <div class="intro-card">
+                    <div class="card-icon">📊</div>
+                    <h3>详细解读报告</h3>
+                    <p>性格描述 + 使用建议 + 匹配场景，找到你的 AITI</p>
+                </div>
+            </div>
+
+            <div class="start-section">
+                <button id="start-btn" class="start-btn">开始测试</button>
+                <p class="hint">完全免费 · 无需注册 · 结果可分享</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- 答题页 -->
+    <div id="quiz-page" class="page">
+        <div class="container">
+            <div class="quiz-header">
+                <div class="progress-container">
+                    <div class="progress-bar">
+                        <div id="progress-fill" class="progress-fill"></div>
+                    </div>
+                    <div class="progress-text">
+                        <span id="current-question">1</span> / <span id="total-questions">12</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="question-card">
+                <div class="question-text" id="question-text"></div>
+                
+                <div class="options">
+                    <label class="option" data-value="5">
+                        <input type="radio" name="answer" value="5">
+                        <span class="option-text">非常符合</span>
+                        <span class="option-emoji">😊</span>
+                    </label>
+                    <label class="option" data-value="4">
+                        <input type="radio" name="answer" value="4">
+                        <span class="option-text">比较符合</span>
+                        <span class="option-emoji">🙂</span>
+                    </label>
+                    <label class="option" data-value="3">
+                        <input type="radio" name="answer" value="3">
+                        <span class="option-text">一般</span>
+                        <span class="option-emoji">😐</span>
+                    </label>
+                    <label class="option" data-value="2">
+                        <input type="radio" name="answer" value="2">
+                        <span class="option-text">不太符合</span>
+                        <span class="option-emoji">🙁</span>
+                    </label>
+                    <label class="option" data-value="1">
+                        <input type="radio" name="answer" value="1">
+                        <span class="option-text">非常不符合</span>
+                        <span class="option-emoji">😫</span>
+                    </label>
+                </div>
+
+                <div class="quiz-nav">
+                    <button id="prev-btn" class="nav-btn" disabled>上一题</button>
+                    <button id="next-btn" class="nav-btn" disabled>下一题</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 结果页 -->
+    <div id="result-page" class="page">
+        <div class="container">
+            <!-- 免责声明 -->
+            <div class="disclaimer">
+                <div class="disclaimer-line1">🚨测试和解读是综合和多个 AI 模型探讨生成的，网页是技术小白用有道龙虾 LobsterAI 搓出来的。</div>
+                <div class="disclaimer-line2">🙌测试结果仅供参考玩梗，不构成专业或商业推荐。by <a href="https://www.xiaohongshu.com/user/profile/68452893000000001b0226a4?xsec_token=ABCTBkpwTho2O__wvgbgTUPjv949DlO70G4XG7IxT0YCw%3D&xsec_source=pc_search" target="_blank" rel="noopener">@AI 啥啥🍠</a></div>
+            </div>
+            
+            <div class="result-card">
+                <div class="result-header">
+                    <h2 class="result-title-label">我的 AITI 是：</h2>
+                    <div class="result-icon-container">
+                        <div class="result-emoji" id="result-emoji"></div>
+                        <img id="result-image" class="result-image" src="" alt="Model Logo">
+                    </div>
+                    <h2 id="result-name" class="result-name"></h2>
+                    <p id="result-tagline" class="tagline"></p>
+                </div>
+
+                <div class="result-content">
+                    <section class="result-section">
+                        <h3>📝 性格描述</h3>
+                        <p id="result-description" class="result-description"></p>
+                    </section>
+
+                    <section class="result-section">
+                        <h3>✨ 核心能力</h3>
+                        <ul id="result-abilities" class="result-abilities"></ul>
+                    </section>
+
+                    <section class="result-section">
+                        <h3>🎯 最佳使用场景</h3>
+                        <ul id="result-scenarios" class="result-scenarios"></ul>
+                    </section>
+
+                    <section class="result-section">
+                        <h3>💡 使用建议</h3>
+                        <ul id="result-tips" class="result-tips"></ul>
+                    </section>
+
+                    <section class="result-section">
+                        <h3>🔄 其他推荐</h3>
+                        <div id="result-alternatives" class="result-alternatives"></div>
+                    </section>
+                </div>
+
+                <div class="result-actions">
+                    <button id="share-btn" class="share-btn">分享结果</button>
+                    <button id="restart-btn" class="restart-btn">重新测试</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 分享卡片 -->
+    <div id="share-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <div class="share-card" id="share-card">
+                <div class="share-card-header">
+                    <h3>我的 AI 人格是</h3>
+                    <div class="result-icon-container">
+                        <div class="share-emoji" id="share-emoji"></div>
+                        <img id="share-image" class="share-image" src="" alt="Model Logo">
+                    </div>
+                </div>
+                <h2 id="share-name"></h2>
+                <p id="share-tagline" class="share-tagline"></p>
+                <div class="share-qr">
+                    <div id="qr-placeholder">
+                        <div class="qr-icon">🦞</div>
+                        <p>测试你的 AI 人格</p>
+                        <p class="aiti-fullname">AITI</p>
+                        <p class="aiti-subtitle">(Artificial Intelligence Type Indicator)</p>
+                        <p class="credit">🍠 by @AI 啥啥</p>
+                    </div>
+                </div>
+            </div>
+            <p class="share-hint">长按保存图片或截图分享</p>
+        </div>
+    </div>
+
+    <script src="js/app.js?v=202604111612"></script>
+</body>
+</html>
